@@ -10,9 +10,9 @@ published: false
 
 ほぼタイトルの通りですが、nixvimとhome-managerを使っている人でlspmuxを設定したい人向けです。
 
-- lspmuxて何?な人は以下の記事をどうぞ
+- lspmuxて何？な人は以下の記事をどうぞ
 
-<https://zenn.dev/dalance/articles/ad3443d6282ce2>
+  @[card](https://zenn.dev/dalance/articles/ad3443d6282ce2)
 
 ## nixvim側の設定
 
