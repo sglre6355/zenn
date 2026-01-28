@@ -20,29 +20,23 @@ published: false
 programs.nixvim = 
   { lib, ... }:
   {
-    ...
-    plugins = {
-      ...
-      lsp = {
+    plugins.lsp = {
+      enable = true;
+      autoload = true;
+      servers.rust-analyzer = {
         enable = true;
-        autoload = true;
-        servers = {
-          ...
-          rust-analyzer = {
-            enable = true;
-            installCargo = true;
-            installRustc = true;
-            extraOptions = {
-              cmd = lib.nixvim.mkRaw ''
-                vim.lsp.rpc.connect("127.0.0.1", 27631)
-              '';
-              settings.rust-analyzer = {
-                lspMux = {
-                  version = "1";
-                  method = "connect";
-                  server = "rust-analyzer";
-                };
-              };
+        installCargo = true;
+        installRustc = true;
+        extraOptions = {
+          cmd = lib.nixvim.mkRaw ''
+            vim.lsp.rpc.connect("127.0.0.1", 27631)
+          '';
+          settings.rust-analyzer = {
+            lspMux = {
+              version = "1";
+              method = "connect";
+              server = "rust-analyzer";
+            };
           };
         };
       };
